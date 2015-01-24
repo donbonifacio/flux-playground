@@ -8,11 +8,11 @@
  *
  * base.css overrides
  */
+
 /**
  * We are not changing from display:none, but rather re-rendering instead.
  * Therefore this needs to be displayed normally by default.
  */
-/* line 16, scss/app.scss */
 #todo-list li .edit {
   display: inline;
 }

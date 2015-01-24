@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+compass watch --poll --sass-dir=css/scss/ --css-dir=css/
