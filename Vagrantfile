@@ -3,6 +3,6 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "hashicorp/precise64"
-  config.vm.provision :shell, path: "script/bootstrap-apt-get"
+  config.vm.provision :shell, path: "script/bootstrap-apt-get", privileged: false
   config.vm.network :forwarded_port, host: 8080, guest: 8080
 end
