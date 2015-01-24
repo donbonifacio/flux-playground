@@ -48,7 +48,7 @@ var TodoApp = React.createClass({
   render: function() {
   	return (
       <div>
-      YO BIATTCH RETURNS
+      YO BIATTCH RETURNS WAZA
         <Header />
         <MainSection
           allTodos={this.state.allTodos}
