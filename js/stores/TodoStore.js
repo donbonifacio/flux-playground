@@ -23,6 +23,7 @@ var _todos = {};
  * @param  {string} text The content of the TODO
  */
 function create(text) {
+  console.log("TodoStore#create " + text)
   // Hand waving here -- not showing how this interacts with XHR or persistent
   // server-side storage.
   // Using the current timestamp + random number in place of a real id.
@@ -41,6 +42,7 @@ function create(text) {
  *     updated.
  */
 function update(id, updates) {
+  console.log("TodoStore#update " + id)
   _todos[id] = assign({}, _todos[id], updates);
 }
 
@@ -62,6 +64,7 @@ function updateAll(updates) {
  * @param  {string} id
  */
 function destroy(id) {
+  console.log("TodoStore#destroy")
   delete _todos[id];
 }
 
@@ -83,6 +86,7 @@ var TodoStore = assign({}, EventEmitter.prototype, {
    * @return {boolean}
    */
   areAllComplete: function() {
+    console.log("TodoStore#areAllCompleted")
     for (var id in _todos) {
       if (!_todos[id].complete) {
         return false;
@@ -100,6 +104,7 @@ var TodoStore = assign({}, EventEmitter.prototype, {
   },
 
   emitChange: function() {
+    console.log("TodoStore#emitChange")
     this.emit(CHANGE_EVENT);
   },
 
@@ -120,6 +125,7 @@ var TodoStore = assign({}, EventEmitter.prototype, {
 
 // Register callback to handle all updates
 AppDispatcher.register(function(action) {
+  console.log("TodoStore dispach: " + action.actionType + "  " + action.text)
   var text;
 
   switch(action.actionType) {

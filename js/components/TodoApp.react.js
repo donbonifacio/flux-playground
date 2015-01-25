@@ -46,9 +46,9 @@ var TodoApp = React.createClass({
    * @return {object}
    */
   render: function() {
+    console.log("TodoApp.react#render")
   	return (
       <div>
-      YO BIATTCH RETURNS WAZA
         <Header />
         <MainSection
           allTodos={this.state.allTodos}
