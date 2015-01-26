@@ -17,6 +17,8 @@ var Header = require('./Header.react');
 var MainSection = require('./MainSection.react');
 var React = require('react');
 var TodoStore = require('../stores/TodoStore');
+var Router = require('react-router');
+var Link = Router.Link;
 
 /**
  * Retrieve the current TODO data from the TodoStore
@@ -47,7 +49,7 @@ var TodoApp = React.createClass({
    */
   render: function() {
     console.log("TodoApp.react#render")
-  	return (
+    return (
       <div>
         <Header />
         <MainSection
@@ -55,6 +57,7 @@ var TodoApp = React.createClass({
           areAllComplete={this.state.areAllComplete}
         />
         <Footer allTodos={this.state.allTodos} />
+        <Link to="about">About</Link>
       </div>
   	);
   },
