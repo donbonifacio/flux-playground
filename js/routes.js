@@ -8,7 +8,8 @@ var TodoApp = require('./components/TodoApp.react.js');
 var AboutPage = require('./components/AboutPage.react.js');
 
 module.exports = (
-  <Route name='todo' path='/' handler={TodoApp}>
-    <Route name="about" path="about" handler={AboutPage} />
+  <Route name='root' path='/' handler={AboutPage}>
+    <Route name="about" path="/about" handler={AboutPage} />
+    <Route name='todo' path='/todo' handler={TodoApp} />
   </Route>
 );

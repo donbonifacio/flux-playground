@@ -10,7 +10,10 @@ var AboutPage = React.createClass({
 
   render: function() {
     return (
-      <div>ABOUT BIAATCHES</div>
+      <div>ABOUT BIAATCHES
+
+        <Link to="/todo">Todos</Link>
+      </div>
   	);
   },
 
