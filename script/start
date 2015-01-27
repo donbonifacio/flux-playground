@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+LOG_FILE=~/common.log
+
+rm $LOG_FILE
+touch $LOG_FILE
+
+killall -w -r compass || true
+script/watch-scss 2>&1 >> $LOG_FILE &
+
+killall -w -r node || true
+script/watch-js 2>&1 >> $LOG_FILE &
+script/server 2>&1 >> $LOG_FILE &
+
+tail -f -n 500 ~/common.log
