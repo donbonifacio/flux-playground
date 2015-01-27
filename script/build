@@ -1,4 +1,11 @@
 #!/bin/bash -e
 
+NAME=app
+
 NODE_ENV=production node ./node_modules/browserify/bin/cmd.js . | \
-    ./node_modules/uglify-js/bin/uglifyjs -cm > dist/bundle.min.js
+    ./node_modules/uglify-js/bin/uglifyjs -cm > dist/$NAME.min.js
+
+compass compile -e production --force \
+        --sass-dir=css/scss/ --css-dir=dist
+
+mv dist/app.css dist/$NAME.min.css
