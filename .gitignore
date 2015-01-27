@@ -30,3 +30,4 @@ node_modules
 .vagrant
 .sass-cache
 js/.bundle.js
+js/bundle.js

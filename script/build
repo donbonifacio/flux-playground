@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+NODE_ENV=production node ./node_modules/browserify/bin/cmd.js . | \
+    ./node_modules/uglify-js/bin/uglifyjs -cm > dist/bundle.min.js
